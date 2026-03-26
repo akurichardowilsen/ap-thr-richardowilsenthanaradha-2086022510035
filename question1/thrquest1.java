@@ -14,18 +14,14 @@ public class thrquest1 {
             String name = inputStack.pop();
             pairs.add(new String[]{name, month});
         }
-
-        // Sort berdasarkan urutan bulan (manual mapping)
+        
         pairs.sort(Comparator.comparingInt(p -> getMonthValue(p[1])));
 
-        // 3. Masukkan hasil akhir ke Stack sesuai constraint [cite: 22]
         Stack<String> resultStack = new Stack<>();
         for (String[] pair : pairs) {
             resultStack.push(pair[0]);
             resultStack.push(pair[1]);
         }
-
-        // 4. Output sebagai array [cite: 23]
         System.out.println(resultStack);
     }
 
